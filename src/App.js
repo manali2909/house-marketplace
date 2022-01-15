@@ -9,6 +9,7 @@ import Signup from './pages/Signup';
 import ForgotPassword from './pages/ForgotPassword';
 import Navbar from './components/Navbar';
 import PrivateRoute from './components/PrivateRoute';
+import Category from './pages/Category';
 function App() {
   return (
     <>
@@ -20,6 +21,7 @@ function App() {
             <Route path='/profile' element={<Profile/>}/>
           </Route>
           <Route path='/signup' element={<Signup/>}/>
+          <Route path='/category/:categoryName' element={<Category/>}/>
           <Route path='/signin' element={<Signin/>}/>
           <Route path='/forgot-password' element={<ForgotPassword/>}/>
         </Routes>
