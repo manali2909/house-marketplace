@@ -23,6 +23,7 @@ function Offers() {
                     orderBy('timestamp', 'desc'),
                     limit(10)
                 )
+                
                 //execute query
                  
                 const querySnap = await getDocs(q);
