@@ -23,6 +23,7 @@ function Offers() {
                     orderBy('timestamp', 'desc'),
                     limit(10)
                 )
+                
                 //execute query
                  
                 const querySnap = await getDocs(q);
@@ -39,6 +40,7 @@ function Offers() {
                 // console.log(l);
                 setLoading(false);
             }catch(error){
+                console.log(error);
                 toast.error('Could not fetch listing');
                 setLoading(false);
             }
