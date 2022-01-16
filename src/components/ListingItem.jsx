@@ -23,7 +23,7 @@ function ListingItem( {listing , id, onDelete}) {
                         {listing.name}
                     </p>
                     <p className="categoryListingPrice">
-                        ${listing.offer
+                    ₹{listing.offer
                             ? listing.discountedPrice
                                 .toString()
                                 .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
@@ -37,12 +37,13 @@ function ListingItem( {listing , id, onDelete}) {
                     <div className="categoryListingInfoDiv">
                         <img src={bedIcon} alt='bed'/>
                         <p className="categoryListingInfoText">
-                            {listing.bedroom > 1 ? `${listing.bedrooms} Bedrooms`: '1 Bedroom' }
+                            
+                            {listing.bedroom > 1 ? `${listing.bedroom} Bedrooms`: '1 Bedroom' }
                         </p>
 
                         <img src= {bathtubIcon} alt = 'bath'/>
                         <p className="categoryListingInfoText">
-                            {listing.bathroom > 1 ? `${listing.bathrooms} Bathrooms`: '1 Bathroom' }
+                            {listing.bathroom > 1 ? `${listing.bathroom} Bathrooms`: '1 Bathroom' }
                         </p>
                     </div>
                 </div>
