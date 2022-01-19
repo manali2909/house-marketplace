@@ -1,6 +1,6 @@
 import {useState,useEffect} from 'react';
 import {getAuth, updateProfile} from 'firebase/auth';
-import {useNavigate, Link, Navigate} from 'react-router-dom'
+import {useNavigate, Link} from 'react-router-dom'
 import {
         updateDoc,
         doc,
@@ -94,6 +94,7 @@ function Profile() {
             toast.success('Deleted Listnig');
         }
    }
+   const onEdit =(listingId)=>{navigate(`/edit-listing/${listingId}`)}
     return (
     <div className='profile'>
         <header className='profileHeader'>
@@ -151,6 +152,7 @@ function Profile() {
                                 listing={listing.data}
                                 id={listing.id}
                                 onDelete={()=> onDelete(listing.id)}
+                                onEdit={()=>onEdit(listing.id)}
                             />
                         ))}
                     </ul>
