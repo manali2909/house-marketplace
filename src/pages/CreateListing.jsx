@@ -155,7 +155,7 @@ function CreateListing() {
 
         setLoading(false);
         toast.success('Listing added');
-        navigate(`/category/${formDataCopy.type}${docRef.id}`)
+        navigate(`/category/${formDataCopy.type}/${docRef.id}`)
 
         
         // console.log(formData);
