@@ -45,13 +45,9 @@ function Listing() {
                 {listing.imageUrls.map((url, index) => (
                 <SwiperSlide key={index}>
                     {/* {console.log(url)} */}
-                    <div
-                    style={{
-                        background: `url('${url}') center no-repeat`,
-                        backgroundSize: 'cover',
-                    }}
-                    className='swiperSlideDiv'
-                    >{url}</div>
+                    <div className='swiperSlideDiv'>
+                        <img src={url} alt='Home' className='sliderImage'/>
+                    </div>
                 </SwiperSlide>
                 ))}
             </Swiper>
@@ -64,7 +60,7 @@ function Listing() {
                     setShareLinkCopied(false);
                 },2000)
             }}>
-                <img src={shareIcon} atl='share'/>
+                <img src={shareIcon} alt='share'/>
             </div>
             {shareLinkCopied && <p className='linkCopied'> Link Copied!</p>}
 

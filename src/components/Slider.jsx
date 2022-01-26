@@ -46,16 +46,8 @@ function Slider() {
                     key={id}
                     onClick={() => navigate(`/category/${data.type}/${id}`)}
                     >
-                    <div
-                        style={{
-
-                            backgroundSize: 'cover',
-                            background: `url(${data.imageUrls[0]}) center no-repeat ` 
-                        
-                        }}
-                        className='swiperSlideDiv'
-                    >
-                        <img src={data.imageUrls[0]}/>
+                    <div className='swiperSlideDiv'>
+                        <img className='sliderImage' src={data.imageUrls[0]} alt='home'/>
                         <p className='swiperSlideText'>{data.name}</p>
                         <p className='swiperSlidePrice'>
                         ${data.discountedPrice ?? data.regularPrice}{' '}
