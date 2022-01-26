@@ -1,9 +1,10 @@
 import {Link} from 'react-router-dom';
 import {ReactComponent as DeleteIcon} from '../assets/svg/deleteIcon.svg'
+import {ReactComponent as EditIcon} from '../assets/svg/editIcon.svg'
 import bedIcon from '../assets/svg/bedIcon.svg'
 import bathtubIcon from '../assets/svg/bathtubIcon.svg'
 
-function ListingItem( {listing , id, onDelete}) {
+function ListingItem( {listing , id, onEdit, onDelete}) {
     // console.log(listing.location);
     return (
         
@@ -23,7 +24,7 @@ function ListingItem( {listing , id, onDelete}) {
                         {listing.name}
                     </p>
                     <p className="categoryListingPrice">
-                        ${listing.offer
+                    ₹{listing.offer
                             ? listing.discountedPrice
                                 .toString()
                                 .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
@@ -37,12 +38,13 @@ function ListingItem( {listing , id, onDelete}) {
                     <div className="categoryListingInfoDiv">
                         <img src={bedIcon} alt='bed'/>
                         <p className="categoryListingInfoText">
-                            {listing.bedroom > 1 ? `${listing.bedrooms} Bedrooms`: '1 Bedroom' }
+                            
+                            {listing.bedroom > 1 ? `${listing.bedroom} Bedrooms`: '1 Bedroom' }
                         </p>
 
                         <img src= {bathtubIcon} alt = 'bath'/>
                         <p className="categoryListingInfoText">
-                            {listing.bathroom > 1 ? `${listing.bathrooms} Bathrooms`: '1 Bathroom' }
+                            {listing.bathroom > 1 ? `${listing.bathroom} Bathrooms`: '1 Bathroom' }
                         </p>
                     </div>
                 </div>
@@ -53,6 +55,13 @@ function ListingItem( {listing , id, onDelete}) {
                     className='removeIcon' 
                     fill='rgb(231,76,60)'  
                     onClick={()=> onDelete(listing.id,listing.name)}
+                />
+            )}
+
+            {onEdit &&(
+                <EditIcon 
+                    className='editIcon' 
+                    onClick={()=> onEdit(id)}
                 />
             )}
         </li>
