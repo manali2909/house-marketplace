@@ -5,7 +5,7 @@ import bedIcon from '../assets/svg/bedIcon.svg'
 import bathtubIcon from '../assets/svg/bathtubIcon.svg'
 
 function ListingItem( {listing , id, onEdit, onDelete}) {
-    // console.log(listing.location);
+    
     return (
         
         <li className='categoryListing'>
@@ -38,7 +38,6 @@ function ListingItem( {listing , id, onEdit, onDelete}) {
                     <div className="categoryListingInfoDiv">
                         <img src={bedIcon} alt='bed'/>
                         <p className="categoryListingInfoText">
-                            
                             {listing.bedroom > 1 ? `${listing.bedroom} Bedrooms`: '1 Bedroom' }
                         </p>
 
@@ -49,19 +48,20 @@ function ListingItem( {listing , id, onEdit, onDelete}) {
                     </div>
                 </div>
             </Link>
-
+                        
             {onDelete &&(
+                
                 <DeleteIcon 
                     className='removeIcon' 
                     fill='rgb(231,76,60)'  
-                    onClick={()=> onDelete(listing.id,listing.name)}
+                    onClick={()=> onDelete()}
                 />
             )}
 
             {onEdit &&(
                 <EditIcon 
                     className='editIcon' 
-                    onClick={()=> onEdit(id)}
+                    onClick={()=> onEdit()}
                 />
             )}
         </li>

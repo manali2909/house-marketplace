@@ -218,6 +218,13 @@ button {
   text-align: right;
 }
 
+.signInLink {
+  cursor: pointer;
+  color: #00cc66;
+  font-weight: 600;
+  text-align: left;
+}
+
 .signInBar,
 .signUpBar {
   margin-top: 3rem;

@@ -126,7 +126,7 @@ function Profile() {
                         onChange={onChange}
                         className={!changeDetails ? 'profileName': 'profileNameActive'}
                     />
-                     <input 
+                    <input 
                         type='text'
                         id='email'
                         value={email}
