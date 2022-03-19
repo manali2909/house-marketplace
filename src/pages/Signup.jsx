@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import {toast} from 'react-toastify';
+import OAuth from '../components/OAuth';
 import {Link,useNavigate} from 'react-router-dom';
 import {ReactComponent as ArrowRightIcon} from '../assets/svg/keyboardArrowRightIcon.svg'
 import {getAuth, createUserWithEmailAndPassword , updateProfile} from 'firebase/auth'
@@ -48,17 +49,17 @@ function Signup() {
             <>
             <div className='pageContainer'>
                 <header>
-                <p className='pageHeader'>Welcome Back!</p>
+                <p className='pageHeader'>Register here!</p>
                 </header>
                 <form onSubmit={onSubmit}>
                     <input
-                    type='text'
-                    className='nameInput'
-                    placeholder='Name'
-                    id='name'
-                    value={name}
-                    onChange={onChange}
-                />
+                        type='text'
+                        className='nameInput'
+                        placeholder='Name'
+                        id='name'
+                        value={name}
+                        onChange={onChange}
+                    />
                     <input
                         type='email'
                         className='emailInput'
@@ -83,11 +84,16 @@ function Signup() {
                         onClick={()=>setShowPassword((prevState)=> !prevState)}
                         />
                     </div>
-
-                    <Link to = '/forgot-password'
-                        className='forgotPasswordLink'>
-                            Forgot Password
-                    </Link>
+                    <div>
+                        <Link to='/signin' className='signInLink'>
+                            Sign In Instead?
+                        </Link>
+                        <Link to = '/forgot-password'
+                            className='forgotPasswordLink'>
+                                Forgot Password
+                        </Link>
+                    </div>
+                    
                     
                     <div className="signUpBar">
                         <p className="signUpText">
@@ -99,11 +105,11 @@ function Signup() {
                     </div>
                 </form>
 
+                
                 {/* google oAuth */}
+                <OAuth/>
 
-                <Link to='/signin' className='registerLink'>
-                Sign In Instead
-                </Link>
+                
             </div>  
             </>
         )

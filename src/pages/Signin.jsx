@@ -69,7 +69,9 @@ function Signin() {
                   onClick={()=>setShowPassword((prevState)=> !prevState)}
                 />
               </div>
-
+              <Link to='/signup' className='signInLink'>
+                Sign Up Instead?
+              </Link>
               <Link to = '/forgot-password'
                 className='forgotPasswordLink'>
                     Forgot Password
@@ -88,9 +90,7 @@ function Signin() {
             {/* google oAuth */}
             <OAuth/>
 
-            <Link to='/signup' className='registerLink'>
-              Sign Up Instead
-            </Link>
+            
           </div>  
         </>
     )
